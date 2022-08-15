@@ -6,6 +6,10 @@
     
 }
 
+footer{
+    text-align: center;
+    padding: 10px;
+}
 
 .container{
     max-width: 420px;
@@ -13,12 +17,19 @@
     max-height: 745px;
     margin: 0 auto;
     background-color: #c15106;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 h1{
     font-size: 35px;
     text-align: center;
-    margin: 20px;
+    padding: 20px;
+}
+
+#result{
+    
 }
 
 #group-btn{
@@ -35,3 +46,4 @@ h1{
     text-align: center;
     padding: 20px;
 }
+
