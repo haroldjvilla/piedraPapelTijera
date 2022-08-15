@@ -25,23 +25,38 @@ scissorsBtn.addEventListener("click", ()=>{
 })
 
 function play(userOption){
+    userImg.src = "./img/"+userOption+".png";
+
+    resultText.innerHTML = "Chossing!";
+
+    const interval = setInterval(function(){
+        const machineOption = calcMachineoption();
+        machineImg.src = "./img/"+machineOption+".png";
+    }, 200);
+
+    setTimeout(function(){
+
+        clearInterval(interval);
+
     const machineOption = calcMachineoption();
     const result = calcResult(userOption, machineOption);
 
-    userImg.src = "./img/"+userOption+".png";
-    machineImg.src = "./img/"+machineOption+".png";
     
-    switch(result){
-        case TIE:
-            resultText.innerHTML = "You have tied! try again";
-            break;
-        case WIN:
-            resultText.innerHTML = "You win!";
-            break;
-        case LOST:
-            resultText.innerHTML = "You lost!";
-            break;    
-    }
+        machineImg.src = "./img/"+machineOption+".png";
+    
+        switch(result){
+            case TIE:
+                resultText.innerHTML = "You have tied! try again";
+                break;
+            case WIN:
+                resultText.innerHTML = "You win!";
+                break;
+            case LOST:
+                resultText.innerHTML = "You lost!";
+                break;    
+        }
+    
+    }, 2000);
 }
 
 function calcMachineoption() {
