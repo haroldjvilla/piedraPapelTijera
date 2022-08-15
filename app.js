@@ -25,7 +25,7 @@ scissorsBtn.addEventListener("click", ()=>{
 })
 
 function play(userOption){
-    const machineOption = Math.floor(Math.random() * 3);
+    const machineOption = calcMachineoption();
     const result = calcResult(userOption, machineOption);
 
     userImg.src = "./img/"+userOption+".png";
@@ -33,7 +33,7 @@ function play(userOption){
     
     switch(result){
         case TIE:
-            resultText.innerHTML = "You have tied!";
+            resultText.innerHTML = "You have tied! try again";
             break;
         case WIN:
             resultText.innerHTML = "You win!";
